@@ -1,6 +1,6 @@
 {
   "name": "longxi-vue-html5-editor",
-  "version": "2.3.16-0",
+  "version": "2.3.17-0",
   "description": "A WYSIWYG text editor base on html5 and vue",
   "main": "dist/vue-html5-editor.js",
   "directories": {
