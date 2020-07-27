@@ -103,7 +103,6 @@
         &.active-code {
           color: #2973b7;
         }
-          
       }
 
       & > li.toolbar-select{
@@ -114,6 +113,7 @@
           position: relative;
           right: 0px;
           top: 3px;
+          height: auto;
           display: inline-block;
           border-top: 5px solid #666;
           border-left: 5px solid transparent;
