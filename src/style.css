@@ -13,7 +13,6 @@
   border: 1px solid var(--border-color);
   text-align: left;
   border-radius: var(--border-radius);
-  overflow: hidden;
   box-sizing: border-box;
    & > .resize-wrapper{
     position: absolute;
@@ -104,18 +103,16 @@
         &.active-code {
           color: #2973b7;
         }
+          
       }
 
       & > li.toolbar-select{
-        padding-right: 30px;
+        padding-right: 5px;
         position: relative;
         text-align: left;
-        & > .editor-angle-down{
-          /* position: absolute;
-          right: 0;
-          top: 14px; */
+        & .editor-angle-down{
           position: relative;
-          right: 0;
+          right: 0px;
           top: 3px;
           display: inline-block;
           border-top: 5px solid #666;
@@ -123,16 +120,6 @@
           border-right: 5px solid transparent;
           border-bottom: 5px solid transparent;
           width: 0;
-        }
-        & > .editor-angle-down::before{
-          content: '';
-          display: block;
-          height: 6px;
-          width: 6px;
-          margin-left: 3px;
-          border-right: 1px solid #666;
-          border-bottom: 1px solid #666;
-          transform: rotate(45deg);
         }
         & > .module-select{
           min-width: 80px;
@@ -157,7 +144,6 @@
       & > li.toolbar-select::after{
         content: '';
         display: block;
-        /* border-bottom: 1px solid #999; */
         position: absolute;
         bottom: 5px;
         left: 5px;
@@ -200,7 +186,7 @@
       & button {
         color: inherit;
         background-color: inherit;
-        padding: 6px 12px;
+        padding: 5px 12px;
         white-space: nowrap;
         vertical-align: middle;
         cursor: pointer;
@@ -208,7 +194,7 @@
         border: 1px solid var(--border-color);
         border-radius: var(--border-radius);
         margin-right: 4px;
-        margin-bottom: 4px;
+        margin-bottom: 3px;
 
         &:hover {
           border-color: color(var(--border-color) blackness(30%));
@@ -333,6 +319,27 @@
     }
   }
 
+}
+
+.vue-html5-editor {
+  & .color-card {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  & .table-card {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    &.table-card-selected{
+      background: #ddd
+    }
+  }
+} 
+.vue-html5-editor table td {
+  margin: 0;
+  padding: 1px;
 }
 
 @media (max-width: 767px) {

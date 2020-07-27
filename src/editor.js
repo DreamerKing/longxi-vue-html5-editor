@@ -30,6 +30,9 @@ export default {
         imgList: {
             type: Array
         },
+        characteristicList: {
+            type: Array
+        },
         showModuleName: {}
     },
     data(){
@@ -101,6 +104,19 @@ export default {
                 }
             }
         },
+        characteristicList (val) {
+            if (val.length !== 0) {
+              let str = ''
+              for (let i in val) {
+                str += `<span class="character">${val[i].value}</span>`
+              }
+              this.execCommand('insertHTML', str)
+              this.$emit('change', this.$refs.content.innerHTML)
+              this.$nextTick(() => {
+                this.$emit('sucmessage', '特征词插入成功')
+              })
+            }
+          },
         fwidth(val){
             if (this.flag === 2 || !this.saveScale) {
                 return
@@ -222,6 +238,7 @@ export default {
         removeImg () {
           this.showResize = false
           this.target.parentNode.removeChild(this.target)
+          this.$emit('change', this.$refs.content.innerHTML)
         },
         resizeStart (e, position) {
           this.rPosition = position
@@ -266,6 +283,7 @@ export default {
             this.toggleDashboard(null)
             this.$emit('change', this.$refs.content.innerHTML)
             this.activeModuleName = ''
+            this.saveCurrentRange()
         },
         getCurrentRange(){
             return this.range
