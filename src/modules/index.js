@@ -28,6 +28,7 @@ import unlink from './unlink/index'
 import keyword from './keyword/index'
 import upimg from './upimg/index'
 import material from './material/index'
+import code from './code/index'
 
 /**
  * build-in moduls
@@ -62,6 +63,7 @@ export default [
     upimg,
     material,
     undo,
+    code,
     info,
     fullScreen
 ]

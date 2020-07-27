@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "rollup -c rollup.config.js",
+    "dev": "rollup -c -w rollup.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix -f codeframe src/*"
   },
@@ -47,6 +48,7 @@
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-postcss": "^0.2.0",
     "rollup-plugin-progress": "^0.2.1",
-    "rollup-plugin-replace": "^1.1.1"
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-watch": "^4.3.1"
   }
 }

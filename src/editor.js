@@ -36,6 +36,7 @@ export default {
         return {
             activeModuleName: '',
             fullScreen: false,
+            showCode: true,
             dashboard: null,
             rwidth: 0,
             rheight: 0,
@@ -64,7 +65,9 @@ export default {
             const content = this.$refs.content.innerHTML
             if (val !== content) {
                 this.$refs.content.innerHTML = val
+                this.$refs.contentCode.value = val
             }
+            this.$emit('update:content', val)
         },
         fullScreen(val){
             const component = this
@@ -152,6 +155,16 @@ export default {
         toggleFullScreen(){
             this.fullScreen = !this.fullScreen
         },
+        toggleShowCode() {
+            this.showCode = !this.showCode;
+            this.$nextTick(()=> {
+                if(this.showCode) {
+                    this.$refs.contentCode.value = this.content;
+                } else {
+                    this.$refs.content.innerHTML = this.content;
+                }
+            })
+        },
         enableFullScreen(){
             this.fullScreen = true
         },
@@ -163,6 +176,9 @@ export default {
         },
         toggleDashboard(dashboard){
             this.dashboard = this.dashboard === dashboard ? null : dashboard
+        },
+        hiddenDashbord(){
+            this.dashboard = null
         },
         resizeImg(event, dashboard){
           this.activeModuleName = ''
@@ -241,7 +257,6 @@ export default {
         },
         dropSave(){
             this.$emit('change', this.$refs.content.innerHTML)
-            console.log('drop')
         },
         execCommand(command, arg){
             this.restoreSelection()
@@ -255,6 +270,10 @@ export default {
         getCurrentRange(){
             return this.range
         },
+        saveCurrentCodeRange() {
+            const contentCode = this.$refs.contentCode
+            this.$emit('change', contentCode.value)
+         },
         saveCurrentRange(){
             const selection = window.getSelection ? window.getSelection() : document.getSelection()
             if (!selection.rangeCount) {
@@ -291,9 +310,13 @@ export default {
             }
         },
         activeModule(module){
+            if (module.name !== 'code') {
+                this.showCode = false
+            }
             this.showResize = false
             this.restoreSelection()
             this.activeModuleName = this.activeModuleName === module.name ? '' : module.name
+           
             if (typeof module.handler === 'function') {
                 module.handler(this)
                 return
@@ -302,7 +325,15 @@ export default {
                 return
             }
         },
+        activeCode(module) {
+            if(module.name == 'code' && this.showCode == true) {
+                return true;
+            } else {
+                false;
+            }
+        },
         moduleItemSelect (module, value) {
+
           this.execCommand(module.execType, value)
           this.activeModuleName = ''
         }
@@ -322,6 +353,10 @@ export default {
       })
       const content = this.$refs.content
       content.innerHTML = this.content
+
+      const contentCode = this.$refs.contentCode
+      contentCode.value = this.content  
+
       content.addEventListener('mouseup', this.saveCurrentRange, false)
       content.addEventListener('keyup', (e) => {
           if (e.keyCode === 37 || e.keyCode === 39 || e.keyCode === 8) {
@@ -346,6 +381,26 @@ export default {
         this.activeModuleName = ''
         this.dashboard = null
       }, false)
+    
+      contentCode.addEventListener('keyup', () => {
+        this.$emit('change', contentCode.value)
+        this.saveCurrentCodeRange()
+      })
+
+      contentCode.addEventListener('mouseout', (e) => {
+        if (e.target === contentCode) {
+            this.saveCurrentCodeRange()
+        }
+    }, false)
+
+    this.touchCodeHandler = (e) => {
+        if (contentCode.contains(e.target)) {
+            this.saveCurrentCodeRange()
+        }
+    }
+
+    window.addEventListener('touchend', this.touchCodeHandler, false)
+
     },
     updated(){
         // update dashboard style

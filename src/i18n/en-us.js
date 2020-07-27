@@ -40,6 +40,7 @@ export default {
     abort: 'abort',
     reset: 'reset',
     hr: 'horizontal rule',
+    code: 'source code',
     undo: 'undo',
     'line height': 'line height',
     'exceed size limit': 'exceed size limit',

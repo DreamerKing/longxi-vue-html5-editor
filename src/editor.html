@@ -1,7 +1,7 @@
 <div class="vue-html5-editor" :class="{'full-screen':fullScreen}">
     <div class="toolbar" ref="toolbar">
         <ul>
-            <li  v-for="module in modules" :title="locale[module.i18n]" :class="['toolbar-' + module.name, {'toolbar-select': module.selectList}]" @click.stop="activeModule(module)">
+            <li  v-for="module in modules" :title="locale[module.i18n]" :class="['toolbar-' + module.name, {'toolbar-select': module.selectList, 'active-code': activeCode(module)}]" @click.stop="activeModule(module)">
               <span class="icon" :class="module.icon"></span>
               <span v-if="module.selectList" class="icon editor-angle-down"></span>
               <div class="module-select" @click.stop="" :style="{minWidth: module.itemWdith || '80px'}" v-if="module.selectList" v-show="activeModuleName === module.name">
@@ -25,7 +25,16 @@
         </div>
     </div>
     <div class="out-content" :style="outContentStyle">
-      <div 
+      <textarea v-show="showCode" 
+        class="content" 
+        :style="contentStyle" 
+        style="width: 100%; border: none; resize: none;" 
+        ref="contentCode" 
+        role="textbox" 
+        row="20" cols="60"  tabindex="0"
+        aria-multiline="true">
+      </textarea>
+      <div v-show="!showCode"
         class="content loon-edit-content" 
         :style="contentStyle"
         ref="content"
@@ -33,8 +42,7 @@
         @click="resizeImg($event, dashboard)"
         @drop="dropSave"
         @scroll="contetnScroll"
-      >
-      </div>
+      ></div>
       <div class="ayv" id="loon-edit-resize" v-show="showResize" style="user-select: none;">
         <div class="KXKttf" style="user-select: none;height: 80px;">
           <div class="tr_sizes-div" :style="{left: rleft - cScrollX + 'px', top: rtop + mheight - cScrollY + 'px', userSelect: 'none'}">

@@ -101,6 +101,9 @@
           display: inline;
           vertical-align: middle;
         }
+        &.active-code {
+          color: #2973b7;
+        }
       }
 
       & > li.toolbar-select{
