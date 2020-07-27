@@ -111,9 +111,18 @@
         position: relative;
         text-align: left;
         & > .editor-angle-down{
-          position: absolute;
+          /* position: absolute;
           right: 0;
-          top: 14px;
+          top: 14px; */
+          position: relative;
+          right: 0;
+          top: 3px;
+          display: inline-block;
+          border-top: 5px solid #666;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 5px solid transparent;
+          width: 0;
         }
         & > .editor-angle-down::before{
           content: '';
@@ -148,7 +157,7 @@
       & > li.toolbar-select::after{
         content: '';
         display: block;
-        border-bottom: 1px solid #999;
+        /* border-bottom: 1px solid #999; */
         position: absolute;
         bottom: 5px;
         left: 5px;

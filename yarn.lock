@@ -1745,6 +1745,11 @@ lodash@4.17.4, lodash@^4.0.0, lodash@^4.17.4, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
+longxi-vue-html5-editor@^2.3.14:
+  version "2.3.14"
+  resolved "https://registry.npmjs.org/longxi-vue-html5-editor/-/longxi-vue-html5-editor-2.3.14.tgz#049c891be4787e58decd188af249fc2f9f46d6f3"
+  integrity sha512-6rbpFJUacoornEl/cefspPYkaBIIh5O8YE5f/zfxaMCkwx3PFsqIWbIB8TL88toVOIZzJe7oFC/NaWM4g7o2iw==
+
 loose-envify@^1.0.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
