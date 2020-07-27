@@ -39,7 +39,7 @@ export default {
         return {
             activeModuleName: '',
             fullScreen: false,
-            showCode: true,
+            showCode: false,
             dashboard: null,
             rwidth: 0,
             rheight: 0,
