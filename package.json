@@ -1,5 +1,5 @@
 {
-  "name": "loonxi-vue-editor",
+  "name": "longxi-vue-html5-editor",
   "version": "2.1.5",
   "description": "A WYSIWYG text editor base on html5 and vue",
   "main": "rollup.config.js",
