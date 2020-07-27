@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.3.16-0
+ * Vue-html5-editor 2.3.16-1
  * https://github.com/DreamerKing/longxi-vue-html5-editor.git
- * build at Mon Jul 27 2020 18:56:42 GMT+0800 (GMT+08:00)
+ * build at Mon Jul 27 2020 20:16:49 GMT+0800 (GMT+08:00)
  */
 
 (function (global, factory) {
@@ -675,7 +675,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.3.16-0"
+            version: "2.3.16-1"
         }
     }
 };
@@ -1635,7 +1635,7 @@ var editor = {
         return {
             activeModuleName: '',
             fullScreen: false,
-            showCode: true,
+            showCode: false,
             dashboard: null,
             rwidth: 0,
             rheight: 0,
