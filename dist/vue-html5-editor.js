@@ -1,7 +1,7 @@
 /**
  * Vue-html5-editor 2.3.14
- * https://github.com/FlyingWithYou/npm-vue-editor.git
- * build at Mon Jul 27 2020 17:01:14 GMT+0800 (GMT+08:00)
+ * https://github.com/DreamerKing/longxi-vue-html5-editor.git
+ * build at Mon Jul 27 2020 17:13:24 GMT+0800 (GMT+08:00)
  */
 
 (function (global, factory) {
