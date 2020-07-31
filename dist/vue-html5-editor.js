@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.3.16-1
+ * Vue-html5-editor 2.3.16
  * https://github.com/DreamerKing/longxi-vue-html5-editor.git
- * build at Mon Jul 27 2020 20:16:49 GMT+0800 (GMT+08:00)
+ * build at Fri Jul 31 2020 15:52:15 GMT+0800 (GMT+08:00)
  */
 
 (function (global, factory) {
@@ -675,7 +675,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.3.16-1"
+            version: "2.3.16"
         }
     }
 };
@@ -1995,11 +1995,21 @@ var editor = {
           this$1.$emit('change', content.innerHTML);
           this$1.saveCurrentRange();
       }, false);
+
       content.addEventListener('mouseout', function (e) {
           if (e.target === content) {
+              this$1.$emit('change', content.innerHTML);
               this$1.saveCurrentRange();
           }
       }, false);
+
+      content.addEventListener('input', function (e) {
+        if(e.target === content) {
+          this$1.$emit('change', content.innerHTML);
+          this$1.saveCurrentRange();
+        }
+    });
+
       this.touchHandler = function (e) {
           if (content.contains(e.target)) {
               this$1.saveCurrentRange();
@@ -2017,6 +2027,12 @@ var editor = {
         this$1.saveCurrentCodeRange();
       });
 
+      contentCode.addEventListener('input', function (e) {
+        if(e.target === content) {
+            this$1.$emit('change', content.innerHTML);
+            this$1.saveCurrentCodeRange();
+          }
+      });
       contentCode.addEventListener('mouseout', function (e) {
         if (e.target === contentCode) {
             this$1.saveCurrentCodeRange();

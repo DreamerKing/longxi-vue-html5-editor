@@ -383,11 +383,21 @@ export default {
           this.$emit('change', content.innerHTML)
           this.saveCurrentRange()
       }, false)
+
       content.addEventListener('mouseout', (e) => {
           if (e.target === content) {
+              this.$emit('change', content.innerHTML)
               this.saveCurrentRange()
           }
       }, false)
+
+      content.addEventListener('input', e => {
+        if(e.target === content) {
+          this.$emit('change', content.innerHTML)
+          this.saveCurrentRange()
+        }
+    })
+
       this.touchHandler = (e) => {
           if (content.contains(e.target)) {
               this.saveCurrentRange()
@@ -405,6 +415,12 @@ export default {
         this.saveCurrentCodeRange()
       })
 
+      contentCode.addEventListener('input', (e) => {
+        if(e.target === content) {
+            this.$emit('change', content.innerHTML)
+            this.saveCurrentCodeRange()
+          }
+      })
       contentCode.addEventListener('mouseout', (e) => {
         if (e.target === contentCode) {
             this.saveCurrentCodeRange()
