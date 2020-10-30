@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.3.16
+ * Vue-html5-editor 2.3.17
  * https://github.com/DreamerKing/longxi-vue-html5-editor.git
- * build at Fri Jul 31 2020 15:52:15 GMT+0800 (GMT+08:00)
+ * build at Fri Oct 30 2020 15:33:46 GMT+0800 (GMT+08:00)
  */
 
 (function (global, factory) {
@@ -675,7 +675,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.3.16"
+            version: "2.3.17"
         }
     }
 };
@@ -787,7 +787,7 @@ var listUl = {
     }
 };
 
-var template$7 = "<form @submit.prevent=\"insertTable\"> <label> {{$parent.locale[\"row count\"]}} <input type=\"number\" style=\"width: 60px\" maxlength=\"2\" min=\"2\" max=\"10\" v-model=\"rows\"> </label> <label> {{$parent.locale[\"column count\"]}} <input type=\"number\" style=\"width: 60px\" maxlength=\"2\" min=\"2\" max=\"10\" v-model=\"cols\"> </label> <button type=\"submit\">{{$parent.locale.save}}</button> </form>";
+var template$7 = "<form @submit.prevent=\"insertTable\"> <label> {{$parent.locale[\"row count\"]}} <input type=\"number\" style=\"width: 60px\" maxlength=\"2\" min=\"1\" max=\"10\" v-model=\"rows\"> </label> <label> {{$parent.locale[\"column count\"]}} <input type=\"number\" style=\"width: 60px\" maxlength=\"2\" min=\"1\" max=\"10\" v-model=\"cols\"> </label> <button type=\"submit\">{{$parent.locale.save}}</button> </form>";
 
 /**
  * Created by peak on 2017/2/10.
@@ -805,10 +805,10 @@ var dashboard$7 = {
     },
     methods: {
         insertTable: function insertTable(){
-            if (this.rows < 2 || this.rows > 10) {
+            if (this.rows < 1 || this.rows > 10) {
                 return
             }
-            if (this.cols < 2 || this.cols > 10) {
+            if (this.cols < 1 || this.cols > 10) {
                 return
             }
             var table = '<table width="100%" style="border-spacing: 0px; border-collapse: collapse; margin-bottom: 0px; border: 1px solid rgb(221, 221, 221); color: rgb(51, 51, 51); font-size: 14px; line-height: 20px; background-color: transparent; width: 100%;"><tbody>';
