@@ -67,6 +67,7 @@
       position: relative;
       overflow: auto;
       z-index: 98;
+      max-width: 560px;
       & > .content{
         position: relative;
         background-color: inherit;
