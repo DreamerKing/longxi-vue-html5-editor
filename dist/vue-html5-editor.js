@@ -1,7 +1,7 @@
 /**
- * Vue-html5-editor 2.3.18
+ * Vue-html5-editor 2.3.19
  * https://github.com/DreamerKing/longxi-vue-html5-editor.git
- * build at Mon Nov 02 2020 14:34:34 GMT+0800 (GMT+08:00)
+ * build at Thu Nov 26 2020 16:42:54 GMT+0800 (GMT+08:00)
  */
 
 (function (global, factory) {
@@ -675,7 +675,7 @@ var dashboard$4 = {
     template: template$4,
     data: function data(){
         return {
-            version: "2.3.18"
+            version: "2.3.19"
         }
     }
 };
@@ -1615,6 +1615,10 @@ var editor = {
                 return val >= 100
             }
         },
+        maxHeight: {
+          type: Number,
+          default: 540  
+        },
         zIndex: {
             type: Number,
             default: 1000
@@ -1756,6 +1760,7 @@ var editor = {
                 return style
             }
             style['min-height'] = (this.height) + "px";
+            style['max-height'] = (this.maxHeight) + "px";
             return style
         },
         tipWidth: function tipWidth(){

@@ -19,6 +19,10 @@ export default {
                 return val >= 100
             }
         },
+        maxHeight: {
+          type: Number,
+          default: 540  
+        },
         zIndex: {
             type: Number,
             default: 1000
@@ -156,6 +160,7 @@ export default {
                 return style
             }
             style['min-height'] = `${this.height}px`
+            style['max-height'] = `${this.maxHeight}px`
             return style
         },
         tipWidth(){
