@@ -1,7 +1,7 @@
 /**
  * Vue-html5-editor 2.3.19
  * https://github.com/DreamerKing/longxi-vue-html5-editor.git
- * build at Thu Nov 26 2020 16:42:54 GMT+0800 (GMT+08:00)
+ * build at Thu Nov 26 2020 17:22:31 GMT+0800 (GMT+08:00)
  */
 
 (function (global, factory) {
@@ -204,7 +204,7 @@ var eraser = {
     }
 };
 
-var template$2 = "<div class=\"dashboard-font\" style=\"line-height: 36px;\"> <div class=\"dashboard-font-select\"> <label>{{$parent.locale[\"heading\"]}}:</label> <select @change=\"setHeading($event)\"> <option value=\"\">请选择</option> <option v-for=\"h in 6\" :value=\"h\">H{{h}}</option> </select> <!-- <button v-for=\"h in 6\" type=\"button\" @click=\"setHeading(h)\">H{{h}}</button> --> </div> <div class=\"dashboard-font-select\"> <label> {{$parent.locale[\"font name\"]}}: </label> <select @change=\"setFontName($event)\"> <option value=\"\">请选择</option> <option v-for=\"name in nameList\" :value=\"name\">{{name}}</option> </select> <!-- <button v-for=\"name in nameList\" type=\"button\" @click=\"setFontName(name)\">{{name}}</button> --> </div> <div class=\"dashboard-font-select\"> <label> {{$parent.locale[\"font size\"]}}: </label> <select @change=\"setFontSize($event)\"> <option value=\"\">请选择</option> <option v-for=\"size in fontSizeList\" :value=\"size\">{{size}}</option> </select> <!-- <button v-for=\"size in fontSizeList\" type=\"button\" @click=\"setFontSize(size)\">{{size}}</button> --> </div> <div class=\"dashboard-font-select\"> <label> {{$parent.locale[\"line height\"]}}: </label> <select @change=\"setLineHeight($event)\"> <option value=\"\">请选择</option> <option v-for=\"lh in lineHeightList\" :value=\"lh\">{{lh}}</option> </select> <!-- <button v-for=\"lh in lineHeightList\" type=\"button\" @click=\"setLineHeight(lh)\">\n            {{lh}}\n        </button> --> </div> </div>";
+var template$2 = "<div class=\"dashboard-font\" style=\"line-height: 36px;\"> <div class=\"dashboard-font-select\"> <label>{{$parent.locale[\"heading\"]}}:</label> <select @change=\"setHeading($event)\"> <option value=\"\">请选择</option> <option v-for=\"h in 6\" :value=\"h\">H{{h}}</option> </select> <!-- <button v-for=\"h in 6\" type=\"button\" @click=\"setHeading(h)\">H{{h}}</button> --> </div> <div class=\"dashboard-font-select\"> <label> {{$parent.locale[\"font name\"]}}: </label> <select @change=\"setFontName($event)\"> <option value=\"\">请选择</option> <option v-for=\"name in nameList\" :value=\"name\">{{name}}</option> </select> <!-- <button v-for=\"name in nameList\" type=\"button\" @click=\"setFontName(name)\">{{name}}</button> --> </div> <div class=\"dashboard-font-select\"> <label> {{$parent.locale[\"font size\"]}}: </label> <select @change=\"setFontSize($event)\"> <option value=\"\">请选择</option> <option v-for=\"size in fontSizeList\" :value=\"size\">{{size}}</option> </select> <!-- <button v-for=\"size in fontSizeList\" type=\"button\" @click=\"setFontSize(size)\">{{size}}</button> --> </div> <div class=\"dashboard-font-select\"> <label> {{$parent.locale[\"line height\"]}}: </label> <select @change=\"setLineHeight($event)\"> <option value=\"\">请选择</option> <option v-for=\"lh in lineHeightList\" :value=\"lh\">{{lh}}</option> </select> <!-- <button v-for=\"lh in lineHeightList\" type=\"button\" @click=\"setLineHeight(lh)\">\r\n            {{lh}}\r\n        </button> --> </div> </div>";
 
 /**
  * Created by peak on 2017/2/14.
