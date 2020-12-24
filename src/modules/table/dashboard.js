@@ -16,10 +16,10 @@ export default {
     },
     methods: {
         insertTable(){
-            if (this.rows < 1 || this.rows > 10) {
+            if (this.rows < 1 || this.rows > 20) {
                 return
             }
-            if (this.cols < 1 || this.cols > 10) {
+            if (this.cols < 1 || this.cols > 20) {
                 return
             }
             let table = '<table width="100%" style="border-spacing: 0px; border-collapse: collapse; margin-bottom: 0px; border: 1px solid rgb(221, 221, 221); color: rgb(51, 51, 51); font-size: 14px; line-height: 20px; background-color: transparent; width: 100%;"><tbody>'
